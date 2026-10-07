@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Deployment
+.vercel/
+
+# Local secrets - never commit these
+.env
+.env.local
+.env.*.local
+
+# Local tooling / OS noise
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.idea/
+.vscode/
+package-lock.json
+.vercel

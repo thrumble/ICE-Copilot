@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'ID Grotesk';
+  src: url('./assets/fonts/IDGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fresh-conversation entrance: center block fades in on mount. */
+@keyframes fresh-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* First-question transition: bottom composer travels down from the
+   middle of the screen on mount, thread rises into view. */
+@keyframes glide-down {
+  from { opacity: 0; transform: translateY(-32vh); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes thread-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.fresh-in { animation: fresh-in 0.45s ease-out both; }
+.glide-down { animation: glide-down 0.55s cubic-bezier(0.22, 0.9, 0.28, 1) both; }
+.thread-rise { animation: thread-rise 0.45s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fresh-in, .glide-down, .thread-rise { animation: none; }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(28, 27, 23, 0.14);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(28, 27, 23, 0.3);
+}
